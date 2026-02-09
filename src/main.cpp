@@ -145,7 +145,13 @@ int main(void) {
     ImGui::End();
 
     if (ImGui::Begin("edytor")) {
-      ImGui::Text("hello world\n");
+      ImGui::BeginTable("e", 1);
+      ImGui::TableSetupColumn("Zadania");
+      ImGui::TableHeadersRow();
+      ImGui::TableNextRow();
+        ImGui::TableSetColumnIndex(0);
+        ImGui::Text("hai");
+      ImGui::EndTable();
     }
     ImGui::End();
 
