@@ -150,11 +150,18 @@ int main(void) {
       ImGui::TableSetupColumn("Zadania");
       ImGui::TableHeadersRow();
       ImGui::TableNextRow();
+        ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(0, 4));
         ImGui::TableSetColumnIndex(0);
+        ImGui::Spacing();
         ImGui::Selectable("hai##");
+        ImGui::Spacing();
         ImGui::Selectable("hai##1");
+        ImGui::Spacing();
         ImGui::Selectable("hai##2");
+        ImGui::Spacing();
         ImGui::Selectable("hai##3");
+        ImGui::Spacing();
+        ImGui::PopStyleVar(1);
       ImGui::EndTable();
     }
     ImGui::End();
