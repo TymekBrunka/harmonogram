@@ -10,6 +10,14 @@ inline void iminit(GLFWwindow *window, bool add_docking) {
 	ImGui::CreateContext();
 	ImGuiIO& io = ImGui::GetIO(); (void)io;
 
+  // ImFontConfig icons_config;
+  // // icons_config.MergeMode = true;
+  // icons_config.PixelSnapH = true;
+  // icons_config.OversampleH = 3;
+  // icons_config.OversampleV = 3;
+  //
+  // static const ImWchar ranges[]{'a', 'e', 'b'};
+  // io.Fonts->AddFontFromMemoryCompressedTTF(font_awesome_data, font_awesome_size, 19.5, &icons_config, ranges);
   io.Fonts->AddFontFromFileTTF("fonts/Roboto-Regular.ttf");
 	if (add_docking) {
 		ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_DockingEnable;

@@ -136,13 +136,14 @@ int main(void) {
     imNewFrame();
     setupDocking();
 
-    int old_size = ImGui::GetFont()->Scale;
-    ImGui::GetFont()->Scale *= 0.7 + 0.3 * (((float)width) / 1200.0);
-
+    ImGui::GetStyle().FontScaleMain = 0.75 + 0.2 * (((float)width) / 1200.0);
     if (ImGui::Begin("lista")) {
       ImGui::Text("hello world\n");
     }
     ImGui::End();
+
+    ImGui::ShowStyleEditor();
+    ImGui::ShowStyleSelector("hello world");
 
     if (ImGui::Begin("edytor")) {
       ImGui::BeginTable("e", 1);
@@ -150,12 +151,13 @@ int main(void) {
       ImGui::TableHeadersRow();
       ImGui::TableNextRow();
         ImGui::TableSetColumnIndex(0);
-        ImGui::Text("hai");
+        ImGui::Selectable("hai##");
+        ImGui::Selectable("hai##1");
+        ImGui::Selectable("hai##2");
+        ImGui::Selectable("hai##3");
       ImGui::EndTable();
     }
     ImGui::End();
-
-    ImGui::GetFont()->Scale = old_size;
 
     imrender();
 
