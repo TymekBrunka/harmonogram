@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.12)
 project(vizualizator LANGUAGES CXX C)
+include(deps/ext.cmake)
 
 add_library(glad glad/src/glad.c)
 target_include_directories(glad PUBLIC glad/include)
@@ -11,4 +12,4 @@ add_subdirectory(imgui)
 
 add_executable(main src/main.cpp)
 target_include_directories(main PRIVATE src)
-target_link_libraries(main PRIVATE glad glfw betterGL imgui)
+target_link_libraries(main PRIVATE glad glfw betterGL imgui nlohmann_json::nlohmann_json)
