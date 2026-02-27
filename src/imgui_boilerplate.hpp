@@ -20,7 +20,7 @@ inline void iminit(GLFWwindow *window, bool add_docking) {
   // static const ImWchar ranges[]{'a', 'e', 'b'};
   // io.Fonts->AddFontFromMemoryCompressedTTF(font_awesome_data, font_awesome_size, 19.5, &icons_config, ranges);
   // io.Fonts->AddFontFromFileTTF("fonts/Roboto-Regular.ttf");
-  io.Fonts->AddFontFromMemoryTTF((void*)RobotoRegular, sizeof(RobotoRegular));
+  io.Fonts->AddFontFromMemoryCompressedTTF(RobotoRegular_compressed_data, RobotoRegular_compressed_size, 19.5);
 	if (add_docking) {
 		ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 	}

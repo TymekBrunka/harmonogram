@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-project(vizualizator LANGUAGES CXX C)
+project(vizualizator LANGUAGES CXX C VERSION 1.0.0)
 include(deps/ext.cmake)
 
 add_library(glad glad/src/glad.c)
@@ -12,6 +12,6 @@ add_subdirectory(imgui)
 
 # add_executable(bytepack src/assetPackers/bytepacker.cpp)
 
-add_executable(main src/main.cpp fonts/RobotoRegular.cpp)
+add_executable(main src/main.cpp)
 target_include_directories(main PRIVATE src .)
 target_link_libraries(main PRIVATE glad glfw betterGL imgui nlohmann_json::nlohmann_json)
