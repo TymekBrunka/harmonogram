@@ -2,6 +2,7 @@
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
 #include <GLFW/glfw3.h>
+#include "fonts/RobotoRegular.hpp"
 
 bool tru = true;
 
@@ -18,7 +19,8 @@ inline void iminit(GLFWwindow *window, bool add_docking) {
   //
   // static const ImWchar ranges[]{'a', 'e', 'b'};
   // io.Fonts->AddFontFromMemoryCompressedTTF(font_awesome_data, font_awesome_size, 19.5, &icons_config, ranges);
-  io.Fonts->AddFontFromFileTTF("fonts/Roboto-Regular.ttf");
+  // io.Fonts->AddFontFromFileTTF("fonts/Roboto-Regular.ttf");
+  io.Fonts->AddFontFromMemoryTTF((void*)RobotoRegular, sizeof(RobotoRegular));
 	if (add_docking) {
 		ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 	}

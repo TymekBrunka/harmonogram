@@ -10,6 +10,8 @@ find_package(glfw3 REQUIRED)
 add_subdirectory(src/bettergl)
 add_subdirectory(imgui)
 
-add_executable(main src/main.cpp)
-target_include_directories(main PRIVATE src)
+# add_executable(bytepack src/assetPackers/bytepacker.cpp)
+
+add_executable(main src/main.cpp fonts/RobotoRegular.cpp)
+target_include_directories(main PRIVATE src .)
 target_link_libraries(main PRIVATE glad glfw betterGL imgui nlohmann_json::nlohmann_json)
